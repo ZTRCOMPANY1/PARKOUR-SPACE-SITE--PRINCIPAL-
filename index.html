@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parkour Space</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>Parkour Space</h1>
+      <a href="#download" class="btn-download">Baixar Agora</a>
+    </div>
+  </header>
+
+  <section class="about">
+    <h2>Sobre o Jogo</h2>
+    <p>
+      Uma experiência única que mistura parkour com ambientes espaciais em gravidade zero. Encare desafios insanos, explore plataformas flutuantes e sinta a adrenalina do movimento livre em um cenário cósmico.
+    </p>
+    <blockquote>
+      "Explore gravidade zero. Vença desafios com habilidade. Sinta a adrenalina do Parkour no espaço."
+    </blockquote>
+  </section>
+
+<section class="character">
+  <h2>Personagem Principal</h2>
+  <div class="character-content">
+    <img src="assets/zayron 3d/zayron2.png" alt="Personagem do jogo" />
+    <div class="text">
+      <h3>Nome: Zayron Nova</h3>
+      <p>
+        O Zayron Nova (Personagem principal), um Atleta espacial foi
+chamado para um desafio bem ousado, então ele aceita este desafio e
+começa e vai para algum canto da terra em um park para começar este
+desafio, ele não sabe para onde ele irá e até onde ele irá subir, ele recebeu
+sua roupa espacial e a vestiu, bom com essa roupa ele já percebeu para
+onde iria, mas ele não tem mais volta pois ele terá que mostrar que
+consegue fazer esse desafio ousado mostrando para todo mundo que ele
+não é uma pessoa qualquer.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section id="gallery">
+  <h2>Galeria</h2>
+  <div class="carousel-container">
+    <div class="carousel" id="carousel">
+      <!-- Slide 1 -->
+      <div class="slide active">
+        <img src="assets/zayron 3d/screenshot1.png" alt="Screenshot 1" />
+      </div>
+      <!-- Slide 2 (vídeo) -->
+      <div class="slide">
+        <video src="assets/zayron 3d/gameplay2.mp4" autoplay muted loop></video>
+      </div>
+      <!-- Slide 3 -->
+      <div class="slide">
+        <img src="assets/zayron 3d/screenshot2.png" alt="Screenshot 2" />
+      </div>
+    </div>
+    <button class="prev" onclick="prevSlide()">‹</button>
+    <button class="next" onclick="nextSlide()">›</button>
+  </div>
+</section>
+
+  <section class="features">
+    <h2>Recursos e Destaques</h2>
+    <ul>
+      <li>🚀 Parkour em gravidade zero</li>
+      <li>🎨 Estilo gráfico Low Poly</li>
+      <li>🪐 Desafios em plataformas espaciais</li>
+      <li>🎧 Música envolvente</li>
+      <li>🖥️ Compatível com Windows 10+</li>
+    </ul>
+  </section>
+
+  
+
+  <section id="download" class="download">
+    <h2>Baixar o Jogo</h2>
+    <p>Tamanho: N/A MB | Requisitos: Windows 10+, Minimo: I3-3240, GT610 2gb, 4 gb ram</p>
+    <a href="https://ztrcompany1.github.io/pagina-download-em-breve/" class="btn-big">Baixar o Jogo</a>
+    
+  </section>
+
+  <section class="credits">
+    <h2>Créditos</h2>
+    <ul>
+      <li>Desenvolvido por <strong>ZTR Company</strong></li>
+      <li>Trilha Sonora: <strong>ZTR Studios</strong></li>
+      <li>Idealizador: <strong>Julio Cesar</strong></li>
+    </ul>
+  </section>
+
+  <footer>
+    <div class="social">
+      <a href="https://www.youtube.com/@ZTRCOMPANY" target="_blank"><img src="assets/icons/youtube.svg" alt="YouTube"></a>
+      <a href="https://www.instagram.com/ztr_company/" target="_blank"><img src="assets/icons/instagram1.svg" alt="Instagram"></a>
+      <a href="mailto:ztrcompani@hotmail.com"><img src="assets/icons/email.svg" alt="E-mail"></a>
+    </div>
+    <p>© 2025 ZTR Company · <a href="https://ztrcompany.site" target="_blank">Site Oficial</a></p>
+  </footer>
+
+
+
+  <script src="script.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/ua-parser-js@1.0.35/dist/ua-parser.min.js"></script>
+<script>
+  const parser = new UAParser();
+  const navegadorInfo = parser.getBrowser();
+  const device = parser.getDevice();
+  const sistema = parser.getOS();
+
+  fetch("https://rastreador-rkro.onrender.com/rastrear", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      site: "Parkour Space - site",                 // personalize com o nome do seu site
+      pagina: window.location.pathname,
+      navegador: `${navegadorInfo.name || "desconhecido"} ${navegadorInfo.version || ""}`.trim(),
+      sistema: `${sistema.name || "desconhecido"} ${sistema.version || ""}`.trim(),
+      dispositivo: device.type || "desktop",  // mobile, tablet, console, desktop
+      idioma: navigator.language || "desconhecido",
+      resolucao: `${screen.width}x${screen.height}`,
+      referer: document.referrer || "direto"
+    })
+  });
+</script>
+</body>
+</html>
